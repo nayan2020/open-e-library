@@ -1,0 +1,9 @@
+{% extends 'shared/_layout.html' %}
+{% block title %}About {{ super() }}{% endblock %}
+{% block main_contain %}
+    <h1>About Python Project in Index Page</h1>
+    <div>
+        <h2>Welcome to your account  {{ user.name }}! </h2>
+    </div>
+    <p>This is a demo app</p>
+{% endblock %}

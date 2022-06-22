@@ -1,0 +1,33 @@
+/*Register related*/
+.form-container {
+    padding: 50px;
+}
+
+form.account-form > * {
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+form.account-form h1 {
+    text-align: center;
+}
+
+form.account-form button {
+    float: right;
+}
+
+form.account-form {
+    margin-top: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 450px;
+    background-color: #d2cece;
+    border: 1px solid grey;
+    border-radius: 5px;
+    padding: 50px;
+}
+
+/*Error massage*/
+.error-msg {
+    text-align: center;
+}
