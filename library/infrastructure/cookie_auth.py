@@ -1,16 +1,14 @@
 import hashlib
 import datetime
-from typing import Optional
 
 import bson
 from flask import Response, Request
-# import library.services.user_service as user_service
 
-auth_cookie_name = 'pypi_demo_cookie'
+auth_cookie_name = 'E-Library_cookie'
 
 
-def set_auth(response: Response, user_id: int):
-    hash_val = __hash_text(str(user_id))
+def set_auth(response: Response, user_id: str):
+    hash_val = __hash_text(user_id)
     val = "{}:{}".format(user_id, hash_val)
     response.set_cookie(auth_cookie_name, val)
 
@@ -24,7 +22,7 @@ def __add_cookie_callback(_, response: Response, name: str, value: str):
     response.set_cookie(name, value, max_age=datetime.timedelta(days=1))
 
 
-def get_user_id_via_auth_cookie(request: Request) -> Optional[int]:
+def get_user_id_via_auth_cookie(request: Request):  # -> Optional[bson.ObjectId]
     if auth_cookie_name not in request.cookies:
         return None
 
@@ -41,9 +39,10 @@ def get_user_id_via_auth_cookie(request: Request) -> Optional[int]:
         return None
 
     try:
-        return int(user_id)
+        return bson.ObjectId(user_id)
     except:
-        return None
+        print("cooke get_cooke")
+        return user_id
 
 
 def logout(response: Response):

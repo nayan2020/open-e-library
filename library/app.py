@@ -24,13 +24,6 @@ def configure():
 def setup_db():
     mongo_setup.global_init()
 
-    user = User()
-    user.name = 'user1'
-    user.email = 'user1@gmail.com'
-
-    user.save()
-
-
 def register_blueprints():
     from views import account_views
     from views import home_views

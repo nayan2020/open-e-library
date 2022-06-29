@@ -1,4 +1,3 @@
-
 from typing import Optional
 
 from passlib.hash import pbkdf2_sha256 as crypto
@@ -10,12 +9,14 @@ def get_user_count() -> int:
 
 
 def find_user_by_email(email: str) -> Optional[User]:
-    return User.objects.get_or_404(email=email)
+    user = User.objects(email=email).first()
+    return user
 
 
 def create_user(name: str, email: str, password: str) -> Optional[User]:
-    # if find_user_by_email(email) == 404:
-    #     return None
+    if find_user_by_email(email):
+        print(f"ERROR: Account with email {email} already exists.")
+        return None
 
     user = User()
     user.email = email
@@ -38,19 +39,17 @@ def verify_hash(hashed_text: str, plain_text: str) -> bool:
 
 def login_user(email: str, password: str) -> Optional[User]:
     user = find_user_by_email(email)
+
+    # print("mongodb return: "+str({"hashed_password":obje user}))
     if not user:
         return None
 
     if not verify_hash(user.hashed_password, password):
         return None
-
+    print("login_end user ser")
     return user
 
 
 def find_user_by_id(user_id: int) -> Optional[User]:
     user = User.objects().filter(id=user_id).first()
-
     return user
-    
-
-
