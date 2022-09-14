@@ -1,13 +1,53 @@
 {% extends 'shared/_layout.html' %}
-    
-
+{% block title %}Home {{ super() }}{% endblock %}
+{% block additional_css %}
+    <link rel="stylesheet" href="../../static/css/site.css">
+{% endblock %}
 {% block main_contain %}
-    <div class="main">
-        <div class="head">
-            <h1>Bankura Unnayani Institute of Engineering</h1>
-            <h2>Wellcome To E-Library</h2>
+
+    <section class="hero">
+<!--        <div class="hero-inner-img">-->
+<!--            <img src="../../static/img/books-background.jpg" alt="back ground img" srcset="">-->
+<!--        </div>-->
+
+        <div class="hero-inner">
+            <h1>Find, download  the tech book free and open source </h1>
+            <input aria-label="0" type="text" placeholder="Search Book" class="form-control" name="book">
+
         </div>
-        
+        or <a href="#">browse Book</a>
+    </section>
+
+    <div class="pypi-stats">
+        <div class="stat">{{ "{:,}".format(package_count) }} books</div>
+        <div class="stat">{{ "{:,}".format(release_count) }} release</div>
+        <div class="stat">{{ "{:,}".format(user_count) }} users</div>
     </div>
-    
+
+    <div class="container project-list">
+        <div class="row">
+            <div class="col-mid-3"></div>
+            <div class="col-mid-6">
+                <h2>New Releases</h2>
+                <div class="subtitle">
+                    Hot Off the press: the newest project releases
+                </div>
+                <div>
+                    {% for r in releases %}
+                        <div class="project">
+                            <div class="title">
+                                <a href="/project/{{ r.package.id }}">{{ r.package.id }}  {{ r.package.created_date }}</a>
+                                <div class="desc">{{ r.package.author_name}}</div>
+                                <div class="desc">{{ r.package.summary}}</div>
+                                <div class="desc">{{ r.package.description}}</div>
+                                <a href="{{r.package.docs_url}}"> Download here</a>
+                            </div>
+                        </div>
+                    {% endfor %}
+
+                </div>
+                <div class="col-mid-3"></div>
+            </div>
+        </div>
+    </div>
 {% endblock %}

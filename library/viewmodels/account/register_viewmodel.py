@@ -2,6 +2,7 @@ from library.viewmodels.shared.viewmodelbase import ViewModelBase
 from library.services import user_service
 
 
+
 class RegisterViewModel(ViewModelBase):
     def __int__(self):
         super().__init__()
@@ -20,3 +21,4 @@ class RegisterViewModel(ViewModelBase):
             self.error = 'The password must be at least 5 character'
         elif user_service.find_user_by_email(self.email):
             self.error = 'A user with with that email  address already exists'
+

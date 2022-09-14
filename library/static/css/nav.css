@@ -1,0 +1,43 @@
+/*.navbar {*/
+/*    background-color: #0073b7;*/
+/*}*/
+
+/*nav {*/
+/*    padding: 10px;*/
+/*    font-size: 17px;*/
+/*    color: white;*/
+/*    height: 76px;*/
+/*    background-color: #0073b7;*/
+/*}*/
+/*nav > a {*/
+/*    color: white;*/
+/*    margin-right: 10px;*/
+/*}*/
+/*#navbarSupportedContent {*/
+/*    background-color: #0066aa;*/
+/*    padding: 10px;*/
+/*}*/
+.navbar .navbar-brand img{
+    width: 40px;
+}
+
+/*footer part*/
+
+footer{
+    margin-bottom: 0px;
+    margin-top: 50px;
+    padding: 20px;
+    text-align: center;
+    font-size: 20px;
+    background-color: #006dad;
+    color: white;
+}
+footer a{
+    color: #0c4668;
+}
+
+/*Error massage*/
+
+.error-msg {
+    color: #b30000;
+}

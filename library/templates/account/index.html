@@ -1,9 +1,22 @@
 {% extends 'shared/_layout.html' %}
 {% block title %}About {{ super() }}{% endblock %}
 {% block main_contain %}
-    <h1>About Python Project in Index Page</h1>
-    <div>
-        <h2>Welcome to your account  {{ user_id }} </h2>
+<h1>About Pre-Final Project in Index Page</h1>
+<div>
+
+
+    <div class="card" style="width: 20rem;">
+        <h3>Welcome to your website: </h3>
+        <div class="card-body">
+            <h5 class="card-title">{{ user.name }}</h5>
+            <h6 class="card-subtitle mb-2 text-muted">Mail: {{user.email}}</h6>
+            <p class="card-text">
+                Thank you for visiting our website. It's the open source. if you feel helpfull .
+                Let’s plan another book for a visit soon.</p>
+            <a href="/" class="card-link">Home</a>
+            <a href="#" class="card-link">Another link</a>
+        </div>
     </div>
-    <p>This is a demo app</p>
+</div>
+
 {% endblock %}

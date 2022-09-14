@@ -1,0 +1,12 @@
+{% extends 'shared/_layout.html' %}
+{% block title %}Package Details {{ super() }}{% endblock %}
+{% block additional_css %}
+
+{% endblock %}
+{% block main_contain %}
+    {{ super() }}
+    <h1>{{ package.id }} {{ latest_version }}</h1>
+
+
+
+{% endblock %}

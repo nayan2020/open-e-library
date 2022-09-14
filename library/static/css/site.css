@@ -1,0 +1,93 @@
+
+/*.hero-inner-img {*/
+/*    position: absolute;*/
+/*    max-width: 500px;*/
+/*    z-index: -1;*/
+
+
+/*}*/
+.hero {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    background-image: url("../img/books-background.jpg");
+
+    color: white;
+    font-size: 14px;
+
+    padding: 50px 0;
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 24px;
+    margin-bottom: 30px;
+}
+
+.hero a {
+    font-size: 20px;
+    color: white;
+    text-decoration: underline;
+}
+
+.hero-inner {
+    max-width: 500px;
+    margin: 50px auto 30px;
+}
+
+/*middle part of the project*/
+.pypi-stats {
+    background-color: #f1e6e6;
+    padding: 20px 0;
+    text-align: center;
+    border-bottom: 1px solid #bcb9b9;
+    border-top: 1px solid #bcb9b9;
+    margin-bottom: 30px;
+}
+.pypi-stats .stat {
+    display: inline-flex;
+    min-width: 160px;
+    padding: 10px;
+    font-size: 26px;
+    color: #0073b7;
+}
+/*project list part*/
+.project-list{
+    margin: 10px auto 30px;
+}
+
+.project-list .subtitle{
+    font-style: italic;
+}
+
+.project-list h2{
+    font-size: 30px;
+    font-weight: bold;
+
+}
+
+.project-list .project{
+    border: 1px solid #d3d3d3;
+    padding: 10px;
+    background-color: #ececec;
+    min-height:45px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    color: black;
+}
+
+.project-list .project .title{
+    font-size: 20px;
+}
+
+.project-list .project a{
+    color: #006dad;
+}
+
+.project-list .project .desc{
+    font-size: 16px;
+    font-weight: normal;
+    font-style: italic;
+}
+
