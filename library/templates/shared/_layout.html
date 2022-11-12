@@ -17,7 +17,8 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light ">
     <a class="navbar-brand" href="/"><img src="../../static/img/icons8-study-40.png" alt="python image"></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -25,18 +26,25 @@
     </button>
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav ml-auto">
-            <li class="nav-item active"><a class="nav-link" href="/">Home</a></li>
-            <li class="nav-item active"><a class="nav-link" href="/about">About</a></li>
-            <li class="nav-item active"><a class="nav-link" href="#">Services</a></li>
-            {% if user_id %}
-                <li class="nav-item active"><a class="nav-link" href="/account">Account</a></li>
-                <li class="nav-item active"><a class="nav-link" href="/account/logout" id="last_nav_link">Logout</a>
-            {% else %}
-                <li class="nav-item active"><a class="nav-link" href="/account/login">Login</a></li>
-                <li class="nav-item active"><a class="nav-link" href="/account/register" id="last_nav_link">Register</a>
-            {% endif %}
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
             </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="/about">About</a>
+            </li>
+            <li class="nav-item active"><a class="nav-link" href="#">Services</a></li>
+
+
+        </ul>
+        {% if user_id %}
+            <li class="nav-item active p-2"><a class="nav-item " href="/account">Account</a></li>
+            <li class="nav-item active p-2"><a class="nav-item" href="/account/logout">Logout</a>
+                {% else %}
+            <li class="nav-item active p-2 "><a class="nav-item " href="/account/login">Login</a></li>
+            <li class="nav-item active p-2 "><a class="nav-item " href="/account/register">Register</a>
+            </li>
+        {% endif %}
     </div>
 </nav>
 

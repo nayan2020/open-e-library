@@ -6,12 +6,9 @@
 {% block main_contain %}
 
     <section class="hero">
-<!--        <div class="hero-inner-img">-->
-<!--            <img src="../../static/img/books-background.jpg" alt="back ground img" srcset="">-->
-<!--        </div>-->
 
         <div class="hero-inner">
-            <h1>Find, download  the tech book free and open source </h1>
+            <h1>Find, download the tech book free and open source </h1>
             <input aria-label="0" type="text" placeholder="Search Book" class="form-control" name="book">
 
         </div>
@@ -36,11 +33,15 @@
                     {% for r in releases %}
                         <div class="project">
                             <div class="title">
-                                <a href="/project/{{ r.package.id }}">{{ r.package.id }}  {{ r.package.created_date }}</a>
-                                <div class="desc">{{ r.package.author_name}}</div>
-                                <div class="desc">{{ r.package.summary}}</div>
-                                <div class="desc">{{ r.package.description}}</div>
-                                <a href="{{r.package.docs_url}}"> Download here</a>
+                                <a href="/project/{{ r.package.id }}">{{ r.package.id }} {{ r.package.created_date }}</a>
+                                <div class="desc">{{ r.package.author_name }}</div>
+                                <div class="desc">{{ r.package.summary }}</div>
+                                <div class="desc">{{ r.package.description }}</div>
+                                {% if user_id %}
+                                    <a href="{{ r.package.docs_url }}"> Download here</a>
+                                {% else %}
+                                    <a href="/account/login"> Log In for Download </a>
+                                {% endif %}
                             </div>
                         </div>
                     {% endfor %}
